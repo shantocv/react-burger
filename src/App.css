@@ -1,3 +1,15 @@
 .App {
   text-align: center;
 }
+
+.app-button {
+  font: inherit;
+  height: 40px;
+  padding: 5px;
+  width: 200px;
+  border: 1px solid blue;
+  color: white;
+  background-color: blue;
+  box-shadow: 0 2px 3px #ccc;
+  cursor: pointer;
+}

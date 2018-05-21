@@ -64,7 +64,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Burger</h1>
-        <button onClick={this.toggleHandler}>Switch Name</button>
+        <button className='app-button' onClick={this.toggleHandler}>Switch Name</button>
         {persons}
       </div>
     );
