@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
-import Person from './Person/Person';
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit'
 
 class App extends Component {
   state = {
@@ -47,24 +49,14 @@ class App extends Component {
   render() {
     let persons = null
     if(this.state.displayPersons){
-      persons = (
-        <div>
-          {
-            this.state.persons.map((person, index) => {
-              return <Person name={person.name}
-                             age={person.age}
-                             key={person.id}
-                             changed={(event) => this.nameChangedHanler(event, person.id)}
-                             click={this.deletePersonHandler.bind(this, index)} />
-            })
-          }
-        </div>
-      )
+      persons = <Persons persons={this.state.persons} 
+                   nameChange={this.nameChangedHanler} 
+                   deletePerson={this.deletePersonHandler} />
+      
     }
     return (
       <div className="App">
-        <h1>React Burger</h1>
-        <button className='app-button' onClick={this.toggleHandler}>Switch Name</button>
+        <Cockpit toggleHandler={this.toggleHandler} />
         {persons}
       </div>
     );
